@@ -5,8 +5,8 @@ Aprovisiona un laboratorio de k8s con 1 master y 3 workers.
 ## ¿Como utilizar?
 
 ```sh
-git clone https://github.com/enmanuelmoreira/kubernetes-vagrant/almalinux8
-cd kubernetes
+git clone https://github.com/enmanuelmoreira/kubernetes-vagrant/
+cd kubernetes/almalinux8
 vagrant up
 ```
 
