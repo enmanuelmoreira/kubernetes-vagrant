@@ -4,9 +4,19 @@ Aprovisiona un laboratorio de k8s con 1 master y 3 workers.
 
 ## ¿Como utilizar?
 
+### Ubuntu 20.04 LTS (Focal Fossa) Box
+
 ```sh
 git clone https://github.com/enmanuelmoreira/kubernetes-vagrant
-cd kubernetes
+cd kubernetes/ubuntu
+vagrant up
+```
+
+### AlmaLinux 8.3 Box
+
+```sh
+git clone https://github.com/enmanuelmoreira/kubernetes-vagrant
+cd kubernetes/almalinux8
 vagrant up
 ```
 
