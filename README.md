@@ -8,7 +8,7 @@ Aprovisiona un laboratorio de k8s con 1 master y 3 workers.
 
 ```sh
 git clone https://github.com/enmanuelmoreira/kubernetes-vagrant
-cd kubernetes/ubuntu
+cd kubernetes-vagrant/ubuntu
 vagrant up
 ```
 
@@ -16,7 +16,7 @@ vagrant up
 
 ```sh
 git clone https://github.com/enmanuelmoreira/kubernetes-vagrant
-cd kubernetes/almalinux8
+cd kubernetes-vagrant/almalinux8
 vagrant up
 ```
 
