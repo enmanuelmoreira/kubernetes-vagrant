@@ -48,10 +48,12 @@ sed -i '/swap/d' /etc/fstab
 swapoff -a
 
 # Disable SELinux
+echo "[TASK 6] Disable and turn off SELinux"
 setenforce 0
 sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 
 # Add kubernetes sources list 
+echo "[TASK 7] Add Kubernetes Repo"
 cat <<EOF > /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
@@ -67,21 +69,21 @@ ls -ltr /etc/yum.repos.d/kubernetes.repo
 dnf update -y
 
 # Install Kubernetes
-echo "[TASK 7] Install Kubernetes kubeadm, kubelet and kubectl"
+echo "[TASK 8] Install Kubernetes kubeadm, kubelet and kubectl"
 dnf install -y kubelet kubeadm kubectl --nobest --allowerasing
 
 # Start and Enable kubelet service
-echo "[TASK 8] Enable and start kubelet service"
+echo "[TASK 9] Enable and start kubelet service"
 systemctl enable --now kubelet >/dev/null 2>&1
 
 # Enable ssh password authentication for copy files between master and nodes
-echo "[TASK 9] Enable ssh password authentication"
+echo "[TASK 10] Enable ssh password authentication"
 sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 systemctl restart sshd
 
 # Set Root password
-echo "[TASK 10] Set root password"
+echo "[TASK 11] Set root password"
 echo -e "kubeadmin\nkubeadmin" | passwd root
 
 # Update vagrant user's bashrc file

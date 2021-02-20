@@ -9,7 +9,6 @@ cat >>/etc/hosts<<EOF
 172.10.10.103 node3.home.lab node3
 EOF
 
-
 echo "[TASK 2] Install docker container engine"
 apt-get install apt-transport-https ca-certificates curl software-properties-common -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
